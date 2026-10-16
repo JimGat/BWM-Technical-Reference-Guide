@@ -22,6 +22,13 @@ try{
  const initialBytes=await page.evaluate(()=>performance.getEntriesByType('resource').reduce((n,r)=>n+(r.decodedBodySize||0),0));
  expect(initialBytes).toBeLessThan(15*1024*1024);
  await fs.mkdir('data/qa/web',{recursive:true});await page.screenshot({path:'data/qa/web/browser-guide.png'});
+ await page.getByRole('combobox',{name:'Search boards and references'}).fill('ToughC5');await page.keyboard.press('Escape');
+ await page.getByRole('combobox',{name:'Reference type',exact:true}).selectOption('original reference PDF');
+ await expect(page.getByRole('button',{name:'View ToughC5 references',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'View ToughC5 references',exact:true}).click();
+ await expect(page.locator('.asset-item').filter({hasText:'ToughC5 — manufacturer hardware guide'})).toContainText('Original PDF');
+ await page.getByRole('button',{name:'Close board',exact:true}).click();
+ await page.getByRole('combobox',{name:'Reference type',exact:true}).selectOption('');
  await page.getByRole('combobox',{name:'Search boards and references'}).fill('teensy-4.1');await page.keyboard.press('Escape');
  await expect(page.locator('.board-card')).toHaveCount(1);
  await page.getByRole('button',{name:'View Teensy 4.1 references',exact:true}).click();

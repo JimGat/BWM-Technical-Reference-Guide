@@ -1,5 +1,8 @@
 import {createSearchCache} from './search-cache.mjs';
 const cachedSearch=createSearchCache();
+// Collection intakes use both labels for saved source PDFs. Keep older
+// snapshots searchable without rewriting their published source metadata.
+export const canonicalReferenceType=type=>type==='reference PDF'?'original reference PDF':type;
 export function normalize(text){return String(text||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9+]/g,'');}
 const fold=text=>String(text||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'');
 const words=text=>fold(text).match(/[a-z0-9]+(?:\.[0-9]+)*|\++/g)||[];
@@ -32,7 +35,7 @@ export function searchBoards(boards,{query='',brand='',processor='',family='',ar
   if(!includeUndocumented&&!b.assets.length||brand&&b.brand!==brand||processor&&!(b.processor||'').split(' / ').includes(processor)||family&&(family==='SBC'?!['Other SBC','Raspberry Pi SBC'].includes(b.family):b.family!==family)||architecture&&b.architecture!==architecture&&!(b.architecture||'').split(' / ').includes(architecture))return false;
   if(devicesOnly&&!b.device||deviceCategory&&b.device?.category!==deviceCategory)return false;
   if(savedOnly&&!favorites.includes(b.id))return false;
-  if(kind&&!b.assets.some(a=>a.type===kind))return false;
+  if(kind&&!b.assets.some(a=>canonicalReferenceType(a.type)===canonicalReferenceType(kind)))return false;
   if(scope==='reviewed'&&!b.assets.some(a=>a.review==='Reviewed source'))return false;
   if(scope==='source'&&!b.assets.some(a=>a.review==='Unreviewed source'))return false;
   if(!q)return true;

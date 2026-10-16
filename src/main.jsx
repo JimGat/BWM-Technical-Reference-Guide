@@ -10,7 +10,7 @@ import DesktopMaintenance from './DesktopMaintenance.jsx';
 import React,{useEffect,useMemo,useRef,useState,useDeferredValue} from 'react';
 import {createRoot} from 'react-dom/client';
 import {Search,ArrowUpRight,ArrowRight,ArrowLeft,Bookmark,BookOpen,Zap,Wifi,SlidersHorizontal,Grid2X2,List,ChevronDown,ChevronRight,X,Plus,Minus,RotateCw,Maximize2,Download,ExternalLink,FileText,Image as ImageIcon,Info,Check,AlertTriangle,FolderOpen,Battery,Calculator,Trash2,Upload,Settings2,FlaskConical,Command,Menu,Clock,Layers,ShieldCheck,CircuitBoard,Heart} from 'lucide-react';
-import {normalize,searchBoards,validateMeasurement,validateBackup,validateSavedWorkbench} from './domain.mjs';
+import {normalize,searchBoards,validateMeasurement,validateBackup,validateSavedWorkbench,canonicalReferenceType} from './domain.mjs';
 import './styles.css';
 import './professional.css';
 import './theme.css';
@@ -33,7 +33,7 @@ const fmt=(n,d=2)=>Number.isFinite(n)?Number(n.toFixed(d)).toString():'—';
 
 function SourceLink({url,children,...props}){if(!/^https?:\/\//i.test(url||''))return null;return <a href={url} target="_blank" rel="noreferrer" {...props} onClick={e=>{if(window.blackwire){e.preventDefault();window.blackwire.openSource(url).catch(()=>{});}}}>{children||'Manufacturer source'}<ExternalLink size={12}/></a>;}
 const familyLabel=f=>({'SBC':'All single-board computers','ESP32':'ESP32 & ESP8266','Other':'Other development boards','Raspberry Pi SBC':'Raspberry Pi computers','Other SBC':'Single-board computers','GPIO device':'Devices with GPIO','Expansion':'I/O & expansion boards','Source collection':'Manufacturer source collection'}[f]||f);
-const shortType=t=>({'pinout image':'Pinout','GPIO reference image':'GPIO reference','board labeling image':'Board labels','original reference PDF':'Original PDF','source reference':'Source file','chip-package reference':'Chip package','pin function reference':'Pin functions'}[t]||t);
+const shortType=t=>({'pinout image':'Pinout','GPIO reference image':'GPIO reference','board labeling image':'Board labels','original reference PDF':'Original PDF','source reference':'Source file','chip-package reference':'Chip package','pin function reference':'Pin functions'}[canonicalReferenceType(t)]||t);
 const initialWorkbench={favorites:[],measurements:[]};
 function downloadJSON(data,name){const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function App(){

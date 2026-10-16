@@ -6,6 +6,8 @@ Official manuals and schematics sit beside their manufacturer links. NodeMCU Dev
 
 The guide distinguishes board documentation from chip datasheets and marks unresolved physical-map gaps. Pin assignments are not independently electrically verified. Manufacturer artwork retains its original rights. First Edition / 2026 and the physical book draft are unchanged.
 
+The **Original PDF** filter now recognizes both saved-PDF labels used by collection snapshots. Imported manuals appear in that filter and use the same readable PDF label in the viewer, without rewriting published source records.
+
 ## Validation and platform status
 
 Native installer/update validation is pending. Packages will be published only after validation succeeds.
