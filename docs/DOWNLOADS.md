@@ -4,7 +4,7 @@ Download from the [official releases](https://github.com/valleytechsolutions/BWM
 
 ## Windows x64
 
-Run **Black-Wire-0.14.0-windows-x64-setup.exe**. This is the only installer file you need; it creates Start menu and desktop shortcuts. Windows 10/11 x64 is the intended platform; release notes identify the exact native test environments.
+Run **Black-Wire-0.16.0-windows-x64-setup.exe**. This is the only installer file you need; it creates Start menu and desktop shortcuts. Windows 10/11 x64 is the intended platform; release notes identify the exact native test environments.
 
 An installation for all users can request administrator approval during setup and future updates. Use your normal Windows account and your organization's installation policy.
 
@@ -17,12 +17,12 @@ Users of 0.13 or earlier must install this version once to gain the updater. Set
 **Ubuntu/Debian desktop: prefer the DEB.** Open it with your package manager, or run:
 
 ```sh
-sudo apt install ./Black-Wire-0.14.0-linux-amd64.deb
+sudo apt install ./Black-Wire-0.16.0-linux-amd64.deb
 ```
 
 The package installs dependencies and an application-menu entry. In-app updates use the system package manager and may request administrator authentication through PolicyKit. A desktop PolicyKit authentication agent is required unless the account has passwordless sudo. Do not run the app as root.
 
-AppImage is not included in 0.14.0: its automatic restart did not pass validation. Other Linux distributions and package types need separate native testing. Do not disable the Chromium sandbox or change system security settings.
+AppImage is not included in 0.16.0: its automatic restart did not pass validation. Other Linux distributions and package types need separate native testing. Do not disable the Chromium sandbox or change system security settings.
 
 ## Prepare for offline use
 
@@ -47,7 +47,7 @@ This normal release's Windows package is **unsigned**. A normal GitHub release d
 Compare the download to SHA256SUMS.txt from the same release:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 -LiteralPath '.\Black-Wire-0.14.0-windows-x64-setup.exe'
+Get-FileHash -Algorithm SHA256 -LiteralPath '.\Black-Wire-0.16.0-windows-x64-setup.exe'
 ```
 
 ```sh
@@ -56,4 +56,4 @@ sha256sum -c SHA256SUMS.txt --ignore-missing
 
 Update files have checksum verification; references are verified against the app's pinned SHA-256 index. Checksums do not substitute for publisher signing. macOS source remains available, but **no newly validated macOS installer is included**. Earlier releases remain unchanged.
 
-[Release notes](RELEASE-0.14.0.md) · [Build instructions](BUILDING.md) · [Updater supported targets](https://www.electron.build/v26/docs/features/auto-update/)
+[Release notes](RELEASE-0.16.0.md) · [Build instructions](BUILDING.md) · [Updater supported targets](https://www.electron.build/v26/docs/features/auto-update/)

@@ -12,8 +12,12 @@ First Edition / 2026 · Collection **2026.10.3**.
 
 ## Validation and platform status
 
-Native installer/update validation is pending on this candidate. Desktop release assets will be published only after the Windows and Ubuntu checks pass; no package availability is implied by this source note.
+All 139 source tests passed. Search coverage checks passed for 3,291 catalog listings, and browser regression passed for search, original images, PDFs, gesture zoom, mobile layout, the Shopify-style embed and the optional support link.
 
-The normal release will include the exact tested Windows x64 installer, Linux x64 DEB, updater metadata, checksums and native validation report. Windows remains **unsigned**; reputation warnings are still possible. No new macOS package or AppImage is claimed. Other Linux distributions need separate testing. Earlier releases stay unchanged. No test suite establishes freedom from every bug.
+The [native installer/update workflow](https://github.com/valleytechsolutions/BWM-Technical-Reference-Guide/actions/runs/38845722643) passed on Windows Server 2022/2025 and Ubuntu 22.04/24.04. It covers fresh installation, sandboxed launch, original image/PDF checksums, recovery after a failed update check, a real package download/install/relaunch, saved workbench data and cache reuse. Windows also verifies legacy-library preservation. The updater baseline is the same candidate code packaged as QA-only 0.13.99; it is not a separately published older release.
+
+Package build commit: `03e400663357f9f3494991e480c602c038369207`. Collection commit: `19c1c076e64b60013436905cedf92ce9ea84ddbe`. Subsequent release-documentation edits do not change the tested runtime.
+
+This normal release includes the exact tested Windows x64 installer, Linux x64 DEB, updater metadata, checksums and native validation report. Windows remains **unsigned**; reputation warnings are still possible. No new macOS package or AppImage is claimed. Other Linux distributions need separate testing. Earlier releases stay unchanged. No test suite establishes freedom from every bug.
 
 The editorial edition and book draft are unchanged. Manufacturer artwork retains its original rights.
