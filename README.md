@@ -13,13 +13,17 @@
 
 ## Open the reference workbench
 
-**[Use the web app](https://valleytech-black-wire-guide.pages.dev/) · [Read the wiki](https://valleytech-black-wire-guide.pages.dev/wiki/) · [Download desktop release 0.14.0](https://github.com/valleytechsolutions/BWM-Technical-Reference-Guide/releases/tag/v0.14.0)**
+**[Use the web app](https://valleytech-black-wire-guide.pages.dev/) · [Read the wiki](https://valleytech-black-wire-guide.pages.dev/wiki/) · [Download the latest desktop release](https://github.com/valleytechsolutions/BWM-Technical-Reference-Guide/releases/latest)**
 
 Find **ESP32, Arduino, Raspberry Pi, RP2040/RP2350, board pinouts, OLED/LCD/e-paper displays, sensors and maker modules**. Search the exact model, inspect the original source, check its revision and keep useful boards saved locally. Hardware coverage and missing documentation are explicit.
 
+## C5 references and project support / 0.16.0
+
+**Collection 2026.10.3:** 3 new records, 6 enriched records and 11 added references. The existing Waveshare C5 Pico and MINI-KIT pinouts were rechecked against current manufacturer files. The app adds a small, optional [Patreon support link](https://www.patreon.com/valleytechsolutions) in the sidebar and footer, with no third-party widget. [Reference review](docs/wiki/waveshare-c5-and-support.md) · [Release validation and platform status](docs/RELEASE-0.16.0.md). First Edition / 2026 remains unchanged.
+
 ## Vendor references / collection 2026.10.2
 
-**10 new records · 124 enriched records · 232 added references · 159 sourced external pin-purpose rows.** Seeed, M5Stack, Waveshare, Arduino, Adafruit, DFRobot and Renesas are included, with discovery through DigiKey and Mouser. Fourteen added images are physical pinout references; schematics, function sheets and component labels keep their separate roles. [Coverage and remaining gaps](https://github.com/valleytechsolutions/black-wire-pinouts/blob/main/docs/EXPANSION-2026.10.2.md) · [Read in the guide](docs/wiki/vendor-reference-update.md). First Edition / 2026 is unchanged. Browser/source app 0.15.1 also fixes overlapping reference-header actions on narrow screens; published desktop installers remain 0.14.0.
+**10 new records · 124 enriched records · 232 added references · 159 sourced external pin-purpose rows.** Seeed, M5Stack, Waveshare, Arduino, Adafruit, DFRobot and Renesas are included, with discovery through DigiKey and Mouser. Fourteen added images are physical pinout references; schematics, function sheets and component labels keep their separate roles. [Coverage and remaining gaps](https://github.com/valleytechsolutions/black-wire-pinouts/blob/main/docs/EXPANSION-2026.10.2.md) · [Read in the guide](docs/wiki/vendor-reference-update.md). First Edition / 2026 is unchanged. App 0.15.1 fixed overlapping reference-header actions on narrow screens; that fix is retained in 0.16.0.
 
 ## High Boy schematic / collection 2026.10.1
 
@@ -33,7 +37,7 @@ This is a content update within First Edition / 2026. Existing desktop installer
 - **Device maker:** define your own modules and chips with terminal roles, a SIP/DIP/dual-row breadboard package and an optional power profile, then save them to **My devices** for reuse.
 - **DC testing and measurements:** run LED, dimmer and transistor-switch examples with diodes, capacitors, push buttons, NPN/PNP transistors and active buzzers, change switches and potentiometers, inspect connected contacts, and measure voltage or continuity with the multimeter.
 - **Save and assemble:** keep multiple local projects, undo edits, import/export circuit files, and download a printable build guide with lead positions, wiring checks and assembly checklists.
-- [Breadboard instructions](docs/WORKBENCH.md#breadboard-maker) · [Release notes and validation status](docs/RELEASE-0.15.0.md). Version 0.15.0 is prepared in source; desktop downloads below remain on 0.14.0 pending native validation and publication.
+- [Breadboard instructions](docs/WORKBENCH.md#breadboard-maker) · [Release notes and validation status](docs/RELEASE-0.15.0.md). These features are retained in 0.16.0. See the current release notes for native package validation.
 
 ## Previous update / 0.14.0
 
@@ -180,7 +184,7 @@ The power desk includes **13 sourced profiles and 22 published operating observa
 
 Check [Releases](https://github.com/valleytechsolutions/black-wire-desktop/releases) for the actual available assets and validation status. An absent platform asset means that platform has not been released.
 
-**[Download release 0.14.0](https://github.com/valleytechsolutions/BWM-Technical-Reference-Guide/releases/tag/v0.14.0)**. For original images and PDFs without an application, use the separate [collection downloads](https://github.com/valleytechsolutions/black-wire-pinouts/releases).
+**[Download the latest release](https://github.com/valleytechsolutions/BWM-Technical-Reference-Guide/releases/latest)**. For original images and PDFs without an application, use the separate [collection downloads](https://github.com/valleytechsolutions/black-wire-pinouts/releases).
 
 | Platform | Package |
 |---|---|

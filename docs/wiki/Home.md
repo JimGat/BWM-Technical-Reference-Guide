@@ -5,6 +5,7 @@ Board pinouts, manufacturer source files and power data. Every reference keeps i
 [Open the guide](https://valleytech-black-wire-guide.pages.dev/) · [Public reference wiki](https://valleytech-black-wire-guide.pages.dev/wiki/) · [Windows downloads](https://github.com/valleytechsolutions/BWM-Technical-Reference-Guide/releases)
 
 - [Wiring & protocols](Wiring.md) — Original connection diagrams and practical guides.
+- [C5 boards, new references and project support](waveshare-c5-and-support.md) — Waveshare C5 pinouts, M5Stack and NodeMCU reference updates, and the optional Patreon link.
 - [New vendor pin and schematic references](vendor-reference-update.md) — Find the October additions from Seeed, M5Stack, Waveshare, Arduino, Adafruit, DFRobot and Renesas.
 - [High Boy V2_03 schematic](highboy-schematic.md) — The eight-page schematic dated September 29, 2026, with the older MVP revision kept separate.
 - [Install and update the desktop app](desktop-updates.md) — One installer, a persistent offline library and updates inside Black Wire.

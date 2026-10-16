@@ -14,8 +14,11 @@ try{
  page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)failed.push([r.status(),r.url()]);});page.on('request',r=>requests.push(r.url()));
  await page.goto(url);await expect(page.getByRole('heading',{name:/Board library/})).toBeVisible();
  await expect(page.locator('.page-meta').getByText('Browser',{exact:true})).toBeVisible();
+ await expect(page.getByRole('link',{name:'Support the project',exact:true})).toHaveAttribute('href','https://www.patreon.com/valleytechsolutions');
+ await expect(page.getByRole('link',{name:'Support the project',exact:true})).toHaveAttribute('target','_blank');
  await page.waitForLoadState('networkidle');
  expect(requests.filter(u=>u.includes('/library/media/'))).toHaveLength(0);
+ expect(requests.filter(u=>u.includes('patreon.com'))).toHaveLength(0);
  const initialBytes=await page.evaluate(()=>performance.getEntriesByType('resource').reduce((n,r)=>n+(r.decodedBodySize||0),0));
  expect(initialBytes).toBeLessThan(15*1024*1024);
  await fs.mkdir('data/qa/web',{recursive:true});await page.screenshot({path:'data/qa/web/browser-guide.png'});
