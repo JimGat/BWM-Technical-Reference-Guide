@@ -17,6 +17,10 @@
 
 Find **ESP32, Arduino, Raspberry Pi, RP2040/RP2350, board pinouts, OLED/LCD/e-paper displays, sensors and maker modules**. Search the exact model, inspect the original source, check its revision and keep useful boards saved locally. Hardware coverage and missing documentation are explicit.
 
+## Documentation recovery / 0.16.1
+
+**Collection 2026.10.4:** 571 references added across 416 existing Waveshare, M5Stack and NodeMCU listings. Official manuals, schematics, physical maps and component datasheets retain separate scope labels. Large Nesso N1 images have efficient screen previews with originals preserved. [What changed and what is still missing](docs/wiki/vendor-documentation-recovery.md) · [Release validation](docs/RELEASE-0.16.1.md).
+
 ## C5 references and project support / 0.16.0
 
 **Collection 2026.10.3:** 3 new records, 6 enriched records and 11 added references. The existing Waveshare C5 Pico and MINI-KIT pinouts were rechecked against current manufacturer files. The app adds a small, optional [Patreon support link](https://www.patreon.com/valleytechsolutions) in the sidebar and footer, with no third-party widget. [Reference review](docs/wiki/waveshare-c5-and-support.md) · [Release validation and platform status](docs/RELEASE-0.16.0.md). First Edition / 2026 remains unchanged.
